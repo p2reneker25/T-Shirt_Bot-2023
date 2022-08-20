@@ -67,7 +67,7 @@ protected void initDefaultCommand()
 }
 
 public void arcadeDrive() {
-    drive.arcadeDrive(stick.getY(), -(stick.getX()));
+    drive.arcadeDrive(stick.getX(), stick.getY());
 }
 public void arcadeWithPOV() {
 	int pov = stick.getPOV();

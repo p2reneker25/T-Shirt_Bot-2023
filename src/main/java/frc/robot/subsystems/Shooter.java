@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Relay.Value;
 
@@ -14,7 +15,7 @@ public class Shooter extends Subsystem{
 	
 	public Shooter() {
 		super("Shooter");
-		moveShooter = new DoubleSolenoid(RobotMap.SHOOTER_UP, RobotMap.SHOOTER_DOWN);
+		moveShooter = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, RobotMap.SHOOTER_UP, RobotMap.SHOOTER_DOWN);
 		shoot = new Relay(RobotMap.SHOOT_CHANNEL);
 	
 	}

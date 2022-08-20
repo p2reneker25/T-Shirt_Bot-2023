@@ -2,7 +2,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.IterativeRobot;
+//import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -39,7 +39,7 @@ public class Robot extends TimedRobot {
 		oi = new OI();
 		s = new Shooter();
 		d = new DriveTrain();
-		compress = new Compressor();
+		compress = new Compressor(null);
 	
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
@@ -115,8 +115,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		//d.arcadeDrive();
-		d.arcadeWithPOV();
+		d.arcadeDrive();
+		//d.arcadeWithPOV();
 	}
 
 	/**
